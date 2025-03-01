@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://kendo.cdn.telerik.com/2022.3.913/js/kendo.all.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="input-section">
+            <h2 class="section-title">Input Your Details</h2>
+            <input type="text" id="fullName" placeholder="Full Name" required>
+            <input type="text" id="address" placeholder="Address" required>
+            <input type="number" id="mobile" placeholder="Mobile No" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="number" min="0" max="100" id="age" placeholder="Age" required>
+            <input type="text" id="nationality" placeholder="Nationality" required>
+            <input type="text" id="gender" placeholder="Gender" required>
+            <input type="text" id="passport" placeholder="Passport No" required>
+
+            <h3 class="section-title">Education</h3>
+            <input type="text" id="masters" placeholder="Masters Degree" required>
+            <input type="text" id="bachelor" placeholder="Bachelor Degree" required>
+            <input type="text" id="puc" placeholder="Pre-University" required>
+
+            <h3 class="section-title">Skills</h3>
+            <input type="text" id="skills" placeholder="Skills (comma separated)" required>
+
+            <h3 class="section-title">Profile Picture</h3>
+            <input type="file" id="imageUpload" accept="image/*" onchange="previewImage(event)" required>
+        </div>
+
+        <div class="preview-section">
+            <div class="resume-container" id="printResume">
+                <div class="resume-content">
+                    <div class="head-title">
+                        <div class="text-center">
+                            <h2 class="header" id="displayName" style="text-align: center; font-size: 35px; color: #3e65d1;">Your Name</h2>
+                            <!-- <p style="text-align: center;">WEB/UI DESIGNER</p> -->
+                        </div>
+                        <div class="image-container">
+                            <img id="profileImage" class="profile-img" src="">
+                        </div>
+                    </div>
+                    <div class="resume-section">
+                        <div class="section-title" style="text-align: center;">CONTACT INFO</div>
+                        <p><strong>Address:</strong> <span id="displayAddress"></span></p>
+                        <p><strong>Mobile no:</strong> <span id="displayMobile"></span></p>
+                        <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+                    </div>
+
+                    <div class="resume-section">
+                        <div class="section-title" style="text-align: center;">PERSONAL PARTICULARS</div>
+                        <p><strong>Age:</strong> <span id="displayAge"></span></p>
+                        <p><strong>Nationality:</strong> <span id="displayNationality"></span></p>
+                        <p><strong>Gender:</strong> <span id="displayGender"></span></p>
+                        <p><strong>Passport No:</strong> <span id="passportno"></span></p>
+                    </div>
+
+                    <div class="resume-section">
+                        <div class="section-title" style="text-align: center;">EDUCATION DETAILS</div>
+                        <p><strong>Masters Degree:</strong> <span id="displayMasters"></span></p>
+                        <p><strong>Bachelor Degree:</strong> <span id="displayBachelor"></span></p>
+                        <p><strong>Pre-University:</strong> <span id="displayPUC"></span></p>
+                    </div>
+
+                    <div class="resume-section">
+                        <div class="section-title" style="text-align: center;">SKILLS</div>
+                        <strong>
+                            <ul id="skillsList"></ul>
+                        </strong>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-success mt-3" onclick="downloadPDF()">Download as PDF</button>
+            
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
